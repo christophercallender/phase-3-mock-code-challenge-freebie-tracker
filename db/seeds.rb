@@ -1,21 +1,19 @@
 puts "Creating companies..."
+
+Company.create(name: "Apple", founding_year: 1976)
 Company.create(name: "Google", founding_year: 1998)
-Company.create(name: "Facebook", founding_year: 2004)
-Company.create(name: "Dunder Mifflin", founding_year: 2002)
-Company.create(name: "Enron", founding_year: 1995)
+Company.create(name: "Amazon", founding_year: 1994)
 
 puts "Creating devs..."
-Dev.create(name: "Rick")
-Dev.create(name: "Morty")
-Dev.create(name: "Mr. Meseeks")
-Dev.create(name: "Gazorpazop")
+
+Dev.create(name: "Tim Cook")
+Dev.create(name: "Sundar Pichai")
+Dev.create(name: "Andy Jassy")
 
 puts "Creating freebies..."
 
-# ***************************************************************
-# * TODO: create freebies! Remember, a freebie belongs to a dev *
-# * and a freebie belongs to a company.                         *
-# ***************************************************************
-# Create freebies Here
+Freebie.create(item_name: "Apple HomePod", value: 100, dev_id: Dev.first.id, company_id: Company.first.id)
+Freebie.create(item_name: "Google Home", value: 50, dev_id: Dev.second.id, company_id: Company.second.id)
+Freebie.create(item_name: "Amazon Echo", value: 25, dev_id: Dev.third.id, company_id: Company.third.id)
 
 puts "Seeding done!"
